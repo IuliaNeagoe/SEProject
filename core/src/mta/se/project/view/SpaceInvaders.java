@@ -3,6 +3,7 @@ package mta.se.project.view;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.controllers.Controller;
+import com.badlogic.gdx.controllers.ControllerAdapter;
 import com.badlogic.gdx.graphics.FPSLogger;
 import mta.se.project.MainMenu;
 
@@ -11,6 +12,24 @@ public class SpaceInvaders extends Game {
     private Music music;
     private Controller controller;
     private FPSLogger fps;
+    private ControllerAdapter controllerListener = new ControllerAdapter(){
+        @Override
+        public void connected(Controller c) {
+            if (controller == null) {
+                controller = c;
+            }
+        }
+        @Override
+        public void disconnected(Controller c) {
+            if (controller == c) {
+                controller = null;
+            }
+        }
+    };
+    public Controller getController() {
+        return controller;
+    }
+
     @Override
     public void render () {
         InvadersScreen currentScreen = getScreen();
@@ -21,9 +40,13 @@ public class SpaceInvaders extends Game {
         if (currentScreen.isDone()) {
             // dispose the resources of the current screen
             currentScreen.dispose();
-         setScreen(new MainMenu(this));
 
-        }
+            // if the current screen is a main menu screen we switch to
+            // the game loop
+            if (currentScreen instanceof MainMenu)
+                setScreen(new GameLoopScreens(this));
+
+            }
 
         fps.log();
     }

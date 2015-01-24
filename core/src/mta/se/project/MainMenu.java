@@ -2,6 +2,8 @@ package mta.se.project;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.controllers.Controller;
+import com.badlogic.gdx.controllers.ControllerAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -40,10 +42,21 @@ public class MainMenu extends InvadersScreen {
         logo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
         font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
+
+        if (invaders.getController() != null) {
+            invaders.getController().addListener(new ControllerAdapter() {
+                @Override
+                public boolean buttonUp(Controller controller, int buttonIndex) {
+                    controller.removeListener(this);
+                    isDone = true;
+                    return false;
+                }
+            });
+        }
     }
 
     @Override
-    public boolean isDone () {
+    public boolean isDone() {
         return isDone;
     }
 

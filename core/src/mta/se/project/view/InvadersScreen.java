@@ -20,7 +20,7 @@ public abstract class InvadersScreen implements Screen{
 
     /** Called by GdxInvaders to check whether the screen is done.
      * @return true when the screen is done, false otherwise */
-    public abstract boolean isDone ();
+    public abstract boolean isDone();
 
     @Override
     public void render (float delta) {
