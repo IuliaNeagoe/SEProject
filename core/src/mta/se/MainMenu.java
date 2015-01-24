@@ -1,4 +1,4 @@
-package mta.se.project;
+package mta.se;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
@@ -10,8 +10,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
-import mta.se.project.view.InvadersScreen;
-import mta.se.project.view.SpaceInvaders;
+import mta.se.views.InvadersScreen;
+import mta.se.views.SpaceInvaders;
 
 /**
  * Created by IuliS on 10.01.2015.

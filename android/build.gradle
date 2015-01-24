@@ -1,6 +1,6 @@
 android {
-    buildToolsVersion "20.0.0"
-    compileSdkVersion 20
+    buildToolsVersion "21.0.2"
+    compileSdkVersion 21
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -63,7 +63,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'mta.se.project.android/mta.se.project.android.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'mta.se.android/mta.se.android.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

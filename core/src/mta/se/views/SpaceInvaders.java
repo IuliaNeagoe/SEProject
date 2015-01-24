@@ -1,11 +1,11 @@
-package mta.se.project.view;
+package mta.se.views;
 
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.ControllerAdapter;
 import com.badlogic.gdx.graphics.FPSLogger;
-import mta.se.project.MainMenu;
+import mta.se.MainMenu;
 
 public class SpaceInvaders extends Game {
 
@@ -46,7 +46,7 @@ public class SpaceInvaders extends Game {
             if (currentScreen instanceof MainMenu)
                 setScreen(new GameLoopScreens(this));
 
-            }
+        }
 
         fps.log();
     }

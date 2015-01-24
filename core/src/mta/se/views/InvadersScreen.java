@@ -1,4 +1,4 @@
-package mta.se.project.view;
+package mta.se.views;
 
 import com.badlogic.gdx.Screen;
 

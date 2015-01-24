@@ -1,4 +1,4 @@
-package mta.se.project.view;
+package mta.se.views;
 
 /**
  * Created by IuliS on 24.01.2015.
