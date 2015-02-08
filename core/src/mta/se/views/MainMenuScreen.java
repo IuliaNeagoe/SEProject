@@ -1,4 +1,8 @@
-package mta.se;
+package mta.se.views;
+
+/**
+ * Created by IuliS on 04.02.2015.
+ */
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
@@ -10,13 +14,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
-import mta.se.views.InvadersScreen;
-import mta.se.views.SpaceInvaders;
+import mta.se.SpaceInvaders;
 
-/**
- * Created by IuliS on 10.01.2015.
- */
-public class MainMenu extends InvadersScreen {
+
+public class MainMenuScreen extends InvadersScreen {
     /** the SpriteBatch used to draw the background, logo and text **/
     private final SpriteBatch spriteBatch;
     /** the background texture **/
@@ -31,7 +32,7 @@ public class MainMenu extends InvadersScreen {
     private final Matrix4 viewMatrix = new Matrix4();
     private final Matrix4 transformMatrix = new Matrix4();
 
-    public MainMenu (SpaceInvaders invaders) {
+    public MainMenuScreen (SpaceInvaders invaders) {
         super(invaders);
 
         spriteBatch = new SpriteBatch();

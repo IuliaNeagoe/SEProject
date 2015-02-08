@@ -1,5 +1,7 @@
 package mta.se.views;
 
+import mta.se.SpaceInvaders;
+
 /**
  * Created by IuliS on 24.01.2015.
  */

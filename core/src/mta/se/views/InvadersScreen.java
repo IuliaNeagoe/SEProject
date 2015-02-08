@@ -1,11 +1,16 @@
 package mta.se.views;
 
+import com.badlogic.gdx.Files;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import mta.se.SpaceInvaders;
 
 /**
  * Created by IuliS on 10.01.2015.
  */
 public abstract class InvadersScreen implements Screen{
+    private Music music;
     protected SpaceInvaders invaders;
 
     public InvadersScreen(SpaceInvaders invaders) {
@@ -22,10 +27,15 @@ public abstract class InvadersScreen implements Screen{
      * @return true when the screen is done, false otherwise */
     public abstract boolean isDone();
 
+
+
     @Override
     public void render (float delta) {
         update(delta);
         draw(delta);
+        music = Gdx.audio.newMusic(Gdx.files.getFileHandle("data/music.mp3", Files.FileType.Internal));
+        music.setLooping(true);
+        music.play();
     }
 
     @Override
