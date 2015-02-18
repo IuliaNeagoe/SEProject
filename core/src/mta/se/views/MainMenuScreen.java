@@ -1,8 +1,5 @@
 package mta.se.views;
 
-/**
- * Created by IuliS on 04.02.2015.
- */
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
@@ -14,7 +11,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
-import mta.se.SpaceInvaders;
+import mta.se.controllers.SpaceInvaders;
+
+import javax.swing.*;
 
 
 public class MainMenuScreen extends InvadersScreen {
@@ -31,6 +30,7 @@ public class MainMenuScreen extends InvadersScreen {
     /** view & transform matrix **/
     private final Matrix4 viewMatrix = new Matrix4();
     private final Matrix4 transformMatrix = new Matrix4();
+    private static String username;
 
     public MainMenuScreen (SpaceInvaders invaders) {
         super(invaders);
@@ -43,6 +43,8 @@ public class MainMenuScreen extends InvadersScreen {
         logo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
         font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
+
+        username = JOptionPane.showInputDialog("Username:");
 
         if (invaders.getController() != null) {
             invaders.getController().addListener(new ControllerAdapter() {
@@ -99,5 +101,9 @@ public class MainMenuScreen extends InvadersScreen {
         background.dispose();
         logo.dispose();
         font.dispose();
+    }
+
+    public static String getUsername() {
+        return username;
     }
 }

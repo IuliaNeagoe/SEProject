@@ -7,9 +7,6 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
 
-/**
- * Created by George on 1/23/2015.
- */
 public class Explosion extends ModelInstance {
     public static final float EXPLOSION_LIVE_TIME = 1;
     public float aliveTime = 0;

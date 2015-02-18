@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scores>
+    <player>
+        <username>Gigel</username>
+        <score>480</score>
+    </player>
+    <player>
+        <username>Test</username>
+        <score>160</score>
+    </player>
+    <player>
+        <username>Test</username>
+        <score>240</score>
+    </player>
+    <player>
+        <username>Gigi</username>
+        <score>600</score>
+    </player>
+    <player>
+        <username>Alin</username>
+        <score>680</score>
+    </player>
+
+</scores>

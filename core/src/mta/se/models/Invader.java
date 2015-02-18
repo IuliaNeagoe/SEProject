@@ -2,7 +2,7 @@ package mta.se.models;
 
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
-import com.badlogic.gdx.math.Vector3;
+import mta.se.views.GameScreen;
 
 public class Invader extends ModelInstance {
 	public static float INVADER_ROTATION = 45f;
@@ -15,7 +15,7 @@ public class Invader extends ModelInstance {
 
 	public int state = STATE_MOVE_LEFT;
 	public boolean wasLastStateLeft = true;
-	public float movedDistance = Simulation.PLAYFIELD_MAX_X / 2;;
+	public float movedDistance = GameScreen.PLAYFIELD_MAX_X / 2;;
 
 	public Invader (Model model, float x, float y, float z) {
 		super(model, x, y, z);
@@ -25,7 +25,7 @@ public class Invader extends ModelInstance {
 		movedDistance += delta * INVADER_VELOCITY * speedMultiplier;
 		if (state == STATE_MOVE_LEFT) {
 			transform.trn(-delta * INVADER_VELOCITY * speedMultiplier, 0, 0);
-			if (movedDistance > Simulation.PLAYFIELD_MAX_X) {
+			if (movedDistance > GameScreen.PLAYFIELD_MAX_X) {
 				state = STATE_MOVE_DOWN;
 				movedDistance = 0;
 				wasLastStateLeft = true;
@@ -33,7 +33,7 @@ public class Invader extends ModelInstance {
 		}
 		if (state == STATE_MOVE_RIGHT) {
 			transform.trn(delta * INVADER_VELOCITY * speedMultiplier, 0, 0);
-			if (movedDistance > Simulation.PLAYFIELD_MAX_X) {
+			if (movedDistance > GameScreen.PLAYFIELD_MAX_X) {
 				state = STATE_MOVE_DOWN;
 				movedDistance = 0;
 				wasLastStateLeft = false;

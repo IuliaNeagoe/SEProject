@@ -4,9 +4,6 @@ import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 
 
-/**
- * Created by George on 1/23/2015.
- */
 public class Ship extends ModelInstance {
     public static final float SHIP_RADIUS = 1;
     public static final float SHIP_VELOCITY = 20;
